@@ -93,6 +93,8 @@ export const Documentation = () => {
         <Route path="/crud" component={Crud} />
         <Route path="/empty" component={EmptyPage} />
         <Route path="/documentation" component={Documentation} />
+        <Route path="/documentation" component={Login} />
+        <Route path="/documentation" component={HomePage} />
     </div>
 
     <AppFooter />

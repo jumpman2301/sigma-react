@@ -141,6 +141,13 @@ export const ButtonDemo = () => {
                     <Button icon="pi pi-heart" className="p-button-rounded p-button-help p-button-outlined p-mr-2 p-mb-2" />
                     <Button icon="pi pi-times" className="p-button-rounded p-button-danger p-button-outlined p-mr-2 p-mb-2" />
                 </div>
+
+                <div className="card">
+                    <h5>Algo mas pichudo</h5>
+                    <Button icon="pi pi-check" className="rounded-button ui-button-danger" />
+                    <Button icon="pi pi-bookmark" className="rounded-button ui-button-danger" />
+                    <Button icon="pi pi-search" className="rounded-button ui-button-danger" />
+                </div>
             </div>
         </div>
     )

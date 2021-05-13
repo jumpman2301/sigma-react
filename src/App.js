@@ -26,6 +26,8 @@ import { PanelDemo } from './components/PanelDemo';
 import { TableDemo } from './components/TableDemo';
 import { TreeDemo } from './components/TreeDemo';
 import { InvalidStateDemo } from './components/InvalidStateDemo';
+import { Login } from './components/Login';
+import { HomePage } from './components/HomePage'; 
 
 import { Calendar } from './pages/Calendar';
 import { Crud } from './pages/Crud';
@@ -152,6 +154,8 @@ const App = () => {
                 { label: 'File', icon: 'pi pi-fw pi-file', to: '/file' },
                 { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/chart' },
                 { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
+                { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+                { label: 'HomePage', icon: 'pi pi-fw pi-home', to: '/homepage' },
             ]
         },
         {
@@ -280,7 +284,6 @@ const App = () => {
             <CSSTransition classNames="layout-sidebar" timeout={{ enter: 200, exit: 200 }} in={isSidebarVisible()} unmountOnExit>
                 <div ref={sidebar} className={sidebarClassName} onClick={onSidebarClick}>
                     <div className="layout-logo" style={{cursor: 'pointer'}} onClick={() => history.push('/')}>
-                        <img alt="Logo" src={logo} />
                     </div>
                     <AppProfile />
                     <AppMenu model={menu} onMenuItemClick={onMenuItemClick} />
@@ -320,6 +323,8 @@ const App = () => {
                 <Route path="/crud" component={Crud} />
                 <Route path="/empty" component={EmptyPage} />
                 <Route path="/documentation" component={Documentation} />
+                <Route path="/login" component={Login} />
+                <Route path="/homepage" component={HomePage} />
             </div>
 
             <AppFooter />

@@ -141,7 +141,7 @@ const App = () => {
             items: [
                 { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/formlayout' },
                 { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/input' },
-                { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/floatlabel' },
+                { label: 'Registro de Usuario', icon: 'pi pi-fw pi-bookmark', to: '/floatlabel' },
                 { label: "Invalid State", icon: "pi pi-fw pi-exclamation-circle", to: "/invalidstate" },
                 { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/button' },
                 { label: 'Table', icon: 'pi pi-fw pi-table', to: '/table' },
@@ -177,7 +177,9 @@ const App = () => {
                 { label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud' },
                 { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
                 { label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline' },
-                { label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty' }
+                { label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty' },
+                { label: 'Login', icon: 'pi pi-fw pi-circle-off', to: '/login' }
+
             ]
         },
         {

@@ -7,7 +7,6 @@ import { Dropdown } from 'primereact/dropdown';
 
 export const Login = () => {
 
-
     return (
         <div className="p-grid">
             <div className="p-col-12 p-md-6">

@@ -9,8 +9,6 @@ import { Chips } from 'primereact/chips';
 import { Dropdown } from 'primereact/dropdown';
 import { MultiSelect } from 'primereact/multiselect';
 import { CountryService } from '../service/CountryService';
-import { Button } from 'primereact/button';
-import { SplitButton } from 'primereact/splitbutton';
 
 export const FloatLabelDemo = () => {
 
@@ -28,13 +26,11 @@ export const FloatLabelDemo = () => {
     const [value10, setValue10] = useState(null);
 
     const cities = [
-        { name: 'San José', code: 'SJ' },
-        { name: 'Alajuela', code: 'AL' },
-        { name: 'Heredia', code: 'HE' },
-        { name: 'Cartago', code: 'CA' },
-        { name: 'Limon', code: 'LI' },
-        { name: 'Puntarenas', code: 'PN' },
-        { name: 'Guanacaste', code: 'GN' },
+        { name: 'New York', code: 'NY' },
+        { name: 'Rome', code: 'RM' },
+        { name: 'London', code: 'LDN' },
+        { name: 'Istanbul', code: 'IST' },
+        { name: 'Paris', code: 'PRS' },
     ];
 
     useEffect(() => {
@@ -62,45 +58,43 @@ export const FloatLabelDemo = () => {
         <div className="p-grid floatlabel-demo">
             <div className="p-col-12">
                 <div className="card p-fluid">
-                    <h1>Registro de Usuario.</h1>
-                    <h2>Por favor ingrese sus datos.</h2>
-                    <p><strong>*Todos los campos son obligatorios.</strong></p>
+                    <h5>Ventana de Registro</h5>
+                    <p>Por favor ingrese sus datos</p>
                     <div className="p-grid">
                         <div className="p-col-12 p-md-6">
                             <div className="p-field">
                                 <span className="p-float-label">
                                     <InputText type="text" id="inputtext" value={value1} onChange={(e) => setValue1(e.target.value)} />
-                                    <label htmlFor="inputtext">Nombre de Usuario</label>
+                                    <label htmlFor="inputtext">InputText</label>
                                 </span>
                             </div>
                             <div className="p-field">
                                 <span className="p-float-label">
-                                    <InputText type="text" id="password" type="password"/>
-                                    <label htmlFor="inputtext">Password</label>
+                                    <InputMask id="inputmask" mask="99/99/9999" value={value2} onChange={(e) => setValue2(e.value)}></InputMask>
+                                    <label htmlFor="inputmask">InputMask</label>
                                 </span>
                             </div>
                             <div className="p-field">
                                 <span className="p-float-label">
-                                    <InputText type="text" id="password" type="password"/>
-                                    <label htmlFor="inputtext">Confirm Password</label>
+                                    <InputNumber id="inputnumber" value={value3} onValueChange={(e) => setValue3(e.target.value)}></InputNumber>
+                                    <label htmlFor="inputnumber">InputNumber</label>
                                 </span>
                             </div>
                             <div className="p-field">
-                                <span className="p-float-label">
-                                    <InputText type="text" id="password" />
-                                    <label htmlFor="inputtext">Nombre</label>
-                                </span>
+                                <div className="p-inputgroup">
+                                    <span className="p-inputgroup-addon">
+                                        <i className="pi pi-user"></i>
+                                    </span>
+                                    <span className="p-float-label">
+                                        <InputText type="text" id="inputgroup" value={value4} onChange={(e) => setValue4(e.target.value)} />
+                                        <label htmlFor="inputgroup">InputGroup</label>
+                                    </span>
+                                </div>
                             </div>
                             <div className="p-field">
                                 <span className="p-float-label">
-                                    <InputText type="text" id="password" />
-                                    <label htmlFor="inputtext">Primer Apellido</label>
-                                </span>
-                            </div>
-                            <div className="p-field">
-                                <span className="p-float-label">
-                                    <InputText type="text" id="password" />
-                                    <label htmlFor="inputtext">Segundo Apellido</label>
+                                    <InputTextarea id="textarea" rows="3" cols="30" value={value5} onChange={(e) => setValue5(e.target.value)}></InputTextarea>
+                                    <label htmlFor="textarea">Textarea</label>
                                 </span>
                             </div>
                         </div>
@@ -108,24 +102,34 @@ export const FloatLabelDemo = () => {
                         <div className="p-col-12 p-md-6">
                             <div className="p-field">
                                 <span className="p-float-label">
-                                    <InputText type="text" id="inputtext"/>
-                                    <label htmlFor="inputtext">Correo electrónico</label>
+                                    <AutoComplete id="autocomplete" value={value6} onChange={(e) => setValue6(e.value)} suggestions={filteredCountries} completeMethod={searchCountry} field="name"></AutoComplete>
+                                    <label htmlFor="autocomplete">AutoComplete</label>
                                 </span>
                             </div>
                             <div className="p-field">
                                 <span className="p-float-label">
                                     <Calendar inputId="calendar" value={value7} onChange={(e) => setValue7(e.value)}></Calendar>
-                                    <label htmlFor="calendar">Fecha de Nacimiento</label>
+                                    <label htmlFor="calendar">Calendar</label>
                                 </span>
                             </div>
                             <div className="p-field">
                                 <span className="p-float-label">
                                     <Dropdown id="dropdown" options={cities} value={value8} onChange={(e) => setValue8(e.value)} optionLabel="name"></Dropdown>
-                                    <label htmlFor="dropdown">Provincia de Residencia</label>
+                                    <label htmlFor="dropdown">Dropdown</label>
                                 </span>
                             </div>
-                            <h5></h5>
-                            <Button label="Register" className="p-mr-2 p-mb-2" ></Button>
+                            <div className="p-field">
+                                <span className="p-float-label">
+                                    <Chips inputId="chips" value={value9} onChange={(e) => setValue9(e.value)}></Chips>
+                                    <label htmlFor="chips">Chips</label>
+                                </span>
+                            </div>
+                            <div className="p-field">
+                                <span className="p-float-label">
+                                    <MultiSelect id="multiselect" options={cities} value={value10} onChange={(e) => setValue10(e.value)} optionLabel="name"></MultiSelect>
+                                    <label htmlFor="multiselect">MultiSelect</label>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

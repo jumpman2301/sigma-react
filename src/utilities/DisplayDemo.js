@@ -9,7 +9,7 @@ export const DisplayDemo = () => {
             <div className="p-col-12">
                 <div className="card">
                     <h4>Display</h4>
-                    <p>Efficiently configure the display of the component with <a href="https://github.com/primefaces/primeflex">PrimeFlex</a> display utilities.</p>
+                    <p>Login Window</p>
 
                     <h5>Inline</h5>
                     <InputText className="p-mr-2 p-d-inline" />

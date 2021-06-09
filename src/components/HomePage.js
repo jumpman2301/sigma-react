@@ -9,7 +9,11 @@ export const HomePage = () => {
 
     const customEvents = [
         {
-            image: 'imagen.jpg'
+            image: 'imagen.jpg',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: 300,
+            height: 500
         }
     ];
 
@@ -24,15 +28,6 @@ export const HomePage = () => {
     const customizedMarker = (item) => {
         return (
             <div className="p-grid texto">
-            <div className="card">
-                    <div className="p-col-20">
-                        <h2>Este es un sistema de implementacion completo y complejo, que ayuda a los usuarios a tener una mejor experiencia de 
-                        manejo de su negocio.</h2> 
-                        </div>
-                        <div className="card">
-                    <Button label="Go to Login" className="p-button-rounded p-mr-2 p-mb-2" />
-                </div>
-            </div>
         </div>
         
         );

@@ -1,154 +1,169 @@
-import React from 'react';
 import { Button } from 'primereact/button';
 import { SplitButton } from 'primereact/splitbutton';
-
-export const ButtonDemo = () => {
-
-    const items = [
-        {
-            label: 'Update',
-            icon: 'pi pi-refresh'
-        },
-        {
-            label: 'Delete',
-            icon: 'pi pi-times'
-        },
-        {
-            label: 'Home',
-            icon: 'pi pi-home'
-        }
-    ];
-
-    return (
-        <div className="p-grid">
-            <div className="p-col-12 p-md-6">
-                <div className="card">
-                    <h5>Default</h5>
-                    <Button label="Submit" className="p-mr-2 p-mb-2"></Button>
-                    <Button label="Disabled" className="p-mr-2 p-mb-2" disabled></Button>
-                    <Button label="Link" className="p-button-link p-mb-2 p-mr-2"></Button>
+import React, { useEffect, useRef } from 'react';
+import Prism from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-scss';
+import { Chart } from 'primereact/chart'; 
+    
+    export const ButtonDemo = () => {
+    
+        const lineData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'First Dataset',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    fill: false,
+                    backgroundColor: '#2f4860',
+                    borderColor: '#2f4860'
+                },
+                {
+                    label: 'Second Dataset',
+                    data: [28, 48, 40, 19, 86, 27, 90],
+                    fill: false,
+                    backgroundColor: '#00bb7e',
+                    borderColor: '#00bb7e'
+                }
+            ]
+        };
+    
+        const pieData = {
+            labels: ['A', 'B', 'C'],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }
+            ]
+        };
+    
+        const polarData = {
+            datasets: [{
+                data: [
+                    11,
+                    16,
+                    7,
+                    3,
+                    14
+                ],
+                backgroundColor: [
+                    "#FF6384",
+                    "#4BC0C0",
+                    "#FFCE56",
+                    "#E7E9ED",
+                    "#36A2EB"
+                ],
+                label: 'My dataset'
+            }],
+            labels: [
+                "Red",
+                "Green",
+                "Yellow",
+                "Grey",
+                "Blue"
+            ]
+        };
+    
+        const barData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: '#2f4860',
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                },
+                {
+                    label: 'My Second dataset',
+                    backgroundColor: '#00bb7e',
+                    data: [28, 48, 40, 19, 86, 27, 90]
+                }
+            ]
+        };
+    
+        const doughnutData = {
+            labels: ['A', 'B', 'C'],
+            datasets: [
+                {
+                    data: [300, 50, 100],
+                    backgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ],
+                    hoverBackgroundColor: [
+                        "#FF6384",
+                        "#36A2EB",
+                        "#FFCE56"
+                    ]
+                }
+            ]
+        };
+    
+        const radarData = {
+            labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+            datasets: [
+                {
+                    label: 'My First dataset',
+                    backgroundColor: 'rgba(179,181,198,0.2)',
+                    borderColor: 'rgba(179,181,198,1)',
+                    pointBackgroundColor: 'rgba(179,181,198,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(179,181,198,1)',
+                    data: [65, 59, 90, 81, 56, 55, 40,56,33,11,12,11]
+                },
+                {
+                    label: 'My Second dataset',
+                    backgroundColor: 'rgba(255,99,132,0.2)',
+                    borderColor: 'rgba(255,99,132,1)',
+                    pointBackgroundColor: 'rgba(255,99,132,1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(255,99,132,1)',
+                    data: [28, 48, 40, 19, 96, 27, 100]
+                }
+            ]
+        };
+    
+        return (
+            <div className="p-grid p-fluid">
+                <div className="p-col-12 p-lg-6">
+                    <div className="card">
+                        <h5 className="centerText">Montos Promedios</h5>
+                        <Chart type="line" data={lineData} />
+                    </div>
+    
+                    <div className="card">
+                        <h5 className="centerText">Cantidad de Usuarios</h5>
+                        <Chart type="pie" data={pieData} />
+                    </div>
                 </div>
-
-                <div className="card">
-                    <h5>Severities</h5>
-                    <Button label="Primary" className="p-mr-2 p-mb-2" />
-                    <Button label="Secondary" className="p-button-secondary p-mr-2 p-mb-2" />
-                    <Button label="Success" className="p-button-success p-mr-2 p-mb-2" />
-                    <Button label="Info" className="p-button-info p-mr-2 p-mb-2" />
-                    <Button label="Warning" className="p-button-warning p-mr-2 p-mb-2" />
-                    <Button label="Danger" className="p-button-danger p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Text</h5>
-                    <Button label="Primary" className="p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Secondary" className="p-button-secondary p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Success" className="p-button-success p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Info" className="p-button-info p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Warning" className="p-button-warning p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Help" className="p-button-help p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Danger" className="p-button-danger p-button-text p-mr-2 p-mb-2" />
-                    <Button label="Plain" className="p-button-plain p-button-text p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Outlined</h5>
-                    <Button label="Primary" className="p-button-outlined p-mr-2 p-mb-2" />
-                    <Button label="Secondary" className="p-button-outlined p-button-secondary p-mr-2 p-mb-2" />
-                    <Button label="Success" className="p-button-outlined p-button-success p-mr-2 p-mb-2" />
-                    <Button label="Info" className="p-button-outlined p-button-info p-mr-2 p-mb-2" />
-                    <Button label="Warning" className="p-button-outlined p-button-warning p-mr-2 p-mb-2" />
-                    <Button label="Help" className="p-button-outlined p-button-help p-mr-2 p-mb-2" />
-                    <Button label="Danger" className="p-button-outlined p-button-danger p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Button Group</h5>
-                    <span className="p-buttonset">
-                        <Button label="Save" icon="pi pi-check" />
-                        <Button label="Delete" icon="pi pi-trash" />
-                        <Button label="Cancel" icon="pi pi-times" />
-                    </span>
-                </div>
-
-                <div className="card">
-                    <h5>SplitButton</h5>
-                    <SplitButton label="Save" icon="pi pi-check" model={items} className="p-button-secondary p-mr-2 p-mb-2"></SplitButton>
-                    <SplitButton label="Save" icon="pi pi-check" model={items} className="p-button-success p-mr-2 p-mb-2"></SplitButton>
-                    <SplitButton label="Save" icon="pi pi-check" model={items} className="p-button-info p-mr-2 p-mb-2"></SplitButton>
-                    <SplitButton label="Save" icon="pi pi-check" model={items} className="p-button-warning p-mr-2 p-mb-2"></SplitButton>
-                    <SplitButton label="Save" icon="pi pi-check" model={items} className="p-button-danger p-mr-2 p-mb-2"></SplitButton>
-                </div>
+                <div className="p-col-12 p-lg-6">
+                    <div className="card">
+                        <h5 className="centerText">Meses in Reservaciones</h5>
+                        <Chart type="bar" data={barData} />
+                    </div>
+                    <div className="card">
+                        <h5 className="centerText">Nacionalidad de Usuarios</h5>
+                        <Chart type="polarArea" data={polarData} />
+                    </div>
             </div>
-
-            <div className="p-col-12 p-md-6">
-                <div className="card">
-                    <h5>Icons</h5>
-                    <Button icon="pi pi-star" className="p-mr-2 p-mb-2"></Button>
-                    <Button label="Bookmark" icon="pi pi-bookmark" className="p-mr-2 p-mb-2"></Button>
-                    <Button label="Bookmark" icon="pi pi-bookmark" iconPos="right" className="p-mr-2 p-mb-2"></Button>
-                </div>
-
-                <div className="card">
-                    <h5>Raised</h5>
-                    <Button label="Primary" className="p-button-raised p-mr-2 p-mb-2" />
-                    <Button label="Secondary" className="p-button-raised p-button-secondary p-mr-2 p-mb-2" />
-                    <Button label="Success" className="p-button-raised p-button-success p-mr-2 p-mb-2" />
-                    <Button label="Info" className="p-button-raised p-button-info p-mr-2 p-mb-2" />
-                    <Button label="Warning" className="p-button-raised p-button-warning p-mr-2 p-mb-2" />
-                    <Button label="Danger" className="p-button-raised p-button-danger p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Rounded</h5>
-                    <Button label="Primary" className="p-button-rounded p-mr-2 p-mb-2" />
-                    <Button label="Secondary" className="p-button-rounded p-button-secondary p-mr-2 p-mb-2" />
-                    <Button label="Success" className="p-button-rounded p-button-success p-mr-2 p-mb-2" />
-                    <Button label="Info" className="p-button-rounded p-button-info p-mr-2 p-mb-2" />
-                    <Button label="Warning" className="p-button-rounded p-button-warning p-mr-2 p-mb-2" />
-                    <Button label="Danger" className="p-button-rounded p-button-danger p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Rounded Icons</h5>
-                    <Button icon="pi pi-star" className="p-button-rounded p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-bookmark" className="p-button-rounded p-button-secondary p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-check" className="p-button-rounded p-button-success p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-search" className="p-button-rounded p-button-info p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-user" className="p-button-rounded p-button-warning p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-sign-out" className="p-button-rounded p-button-danger p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Rounded Text</h5>
-                    <Button icon="pi pi-check" className="p-button-rounded p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-bookmark" className="p-button-rounded p-button-secondary p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-search" className="p-button-rounded p-button-success p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-user" className="p-button-rounded p-button-info p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-bell" className="p-button-rounded p-button-warning p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-heart" className="p-button-rounded p-button-help p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-times" className="p-button-rounded p-button-danger p-button-text p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-filter" className="p-button-rounded p-button-plain p-button-text p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Rounded Outlined</h5>
-                    <Button icon="pi pi-check" className="p-button-rounded p-button-outlined p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-bookmark" className="p-button-rounded p-button-secondary p-button-outlined p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-search" className="p-button-rounded p-button-success p-button-outlined p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-user" className="p-button-rounded p-button-info p-button-outlined p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-bell" className="p-button-rounded p-button-warning p-button-outlined p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-heart" className="p-button-rounded p-button-help p-button-outlined p-mr-2 p-mb-2" />
-                    <Button icon="pi pi-times" className="p-button-rounded p-button-danger p-button-outlined p-mr-2 p-mb-2" />
-                </div>
-
-                <div className="card">
-                    <h5>Algo mas pichudo</h5>
-                    <Button icon="pi pi-check" className="rounded-button ui-button-danger" />
-                    <Button icon="pi pi-bookmark" className="rounded-button ui-button-danger" />
-                    <Button icon="pi pi-search" className="rounded-button ui-button-danger" />
-                </div>
             </div>
-        </div>
-    )
-}
+        )
+    }
+    
+    

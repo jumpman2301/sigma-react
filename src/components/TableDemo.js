@@ -221,8 +221,8 @@ export const TableDemo = () => {
         <div className="p-grid table-demo">
             <div className="p-col-12">
                 <div className="card">
-                    <h5>Default</h5>
-                    <p>Pagination, sorting, filtering and checkbox selection.</p>
+                    <h5>Customers Stats</h5>
+                    <p>Only for Admin Use.</p>
                     <DataTable value={customer1} paginator className="p-datatable-customers" rows={10} dataKey="id" rowHover selection={selectedCustomers} onSelectionChange={(e) => setSelectedCustomers(e.value)}
                         globalFilter={globalFilter1} emptyMessage="No customers found." loading={loading1} header={customer1TableHeader}>
                         <Column selectionMode="multiple" headerStyle={{ width: '3em' }}></Column>
@@ -236,25 +236,10 @@ export const TableDemo = () => {
                     </DataTable>
                 </div>
             </div>
-            <div className="p-col-12">
-                <div className="card">
-                    <h5>Customized</h5>
-                    <p>Scrollable table with gridlines (<mark>.p-datatable-gridlines</mark>), striped rows (<mark>.p-datatable-striped</mark>) and smaller paddings (<mark>p-datatable-sm</mark>).</p>
-                    <DataTable value={customer2} scrollable scrollHeight="600px" className="p-datatable-gridlines p-datatable-striped p-datatable-sm p-datatable-customers" dataKey="id" rowHover
-                        globalFilter={globalFilter2} emptyMessage="No customers found." loading={loading2} header={customer2TableHeader}>
-                        <Column field="name" header="Name" sortable body={bodyTemplate}></Column>
-                        <Column field="country.name" header="Country" sortable body={countryBodyTemplate}></Column>
-                        <Column field="representative.name" header="Representative" sortable body={representativeBodyTemplate}></Column>
-                        <Column field="date" header="Date" sortable body={bodyTemplate}></Column>
-                        <Column field="status" header="Status" sortable body={statusBodyTemplate}></Column>
-                        <Column field="activity" header="Activity" sortable body={activityBody}></Column>
-                    </DataTable>
-                </div>
-            </div>
 
             <div className="p-col-12">
                 <div className="card">
-                    <h5>Row Expand</h5>
+                    <h5>Hotels and Rooms Stats</h5>
 
                     <Toast ref={toast} />
                     <DataTable value={products} expandedRows={expandedRows} className="p-datatable-customers" dataKey="id" onRowToggle={(e) => setExpandedRows(e.data)} onRowExpand={onRowExpand} onRowCollapse={onRowCollapse}
@@ -266,21 +251,6 @@ export const TableDemo = () => {
                         <Column field="category" header="Category" sortable body={bodyTemplate}></Column>
                         <Column field="rating" header="Reviews" sortable body={reviewsBodyTemplate}></Column>
                         <Column field="inventoryStatus" header="Status" sortable body={productStatusBodyTemplate}></Column>
-                    </DataTable>
-                </div>
-            </div>
-
-            <div className="p-col-12">
-                <div className="card">
-                    <h5>Row Group</h5>
-                    <DataTable value={customer3} rowGroupMode="subheader" className="p-datatable-customers" groupField="representative.name" sortMode="single" sortField="representative.name" sortOrder={1}
-                        rowGroupHeaderTemplate={headerRowGroup} rowGroupFooterTemplate={footerRowGroup}>
-                        <Column field="representative.name" header="Representative"></Column>
-                        <Column field="name" header="Name" body={bodyTemplate}></Column>
-                        <Column field="country" header="Country" body={countryBodyTemplate}></Column>
-                        <Column field="company" header="Company" body={bodyTemplate}></Column>
-                        <Column field="status" header="Status" body={statusBodyTemplate}></Column>
-                        <Column field="date" header="Date" body={bodyTemplate}></Column>
                     </DataTable>
                 </div>
             </div>

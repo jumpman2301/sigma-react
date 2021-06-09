@@ -60,6 +60,7 @@ export const Dashboard = () => {
                             <>
                                 <Button icon="pi pi-search" type="button" className="p-button-success p-mr-2 p-mb-1"></Button>
                                 <Button icon="pi pi-times" type="button" className="p-button-danger p-mb-1"></Button>
+                                <Button icon="pi pi-times" type="button" className="p-button-stars p-mb-1"></Button>
                             </>
                         )}></Column>
                     </DataTable>

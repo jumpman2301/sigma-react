@@ -52,7 +52,6 @@ export const Dashboard = () => {
                 <div className="card">
                     <h1 style={{ fontSize: '16px' }}>My Hotels</h1>
                     <DataTable value={products} className="p-datatable-customers" rows={5} style={{ marginBottom: '20px' }} paginator>
-                        <Column header="Logo" body={(data) => <img src={`assets/demo/images/product/${data.image}`} alt={data.image} width="50" />}></Column>
                         <Column field="name" header="Name" sortable></Column>
                         <Column field="category" header="Category" sortable></Column>
                         <Column field="price" header="Price" sortable body={(data) => formatCurrency(data.price)}></Column>

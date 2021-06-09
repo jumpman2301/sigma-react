@@ -136,6 +136,19 @@ const App = () => {
 
     const menu = [
         { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' },
+    
+        {
+            label: 'Menú Principal', icon: 'pi pi-fw pi-clone',
+            items: [
+                { label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud' },
+                { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
+                { label: 'Registro', icon: 'pi pi-fw pi-check-square', to: '/empty' },
+                { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+                
+
+            ]
+        },
+
         {
             label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
             items: [
@@ -156,31 +169,6 @@ const App = () => {
                 { label: 'Misc', icon: 'pi pi-fw pi-circle-off', to: '/misc' },
                 { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
                 { label: 'HomePage', icon: 'pi pi-fw pi-home', to: '/homepage' },
-            ]
-        },
-        {
-            label: 'Utilities', icon: 'pi pi-fw pi-globe',
-            items: [
-                { label: 'Display', icon: 'pi pi-fw pi-desktop', to: '/display' },
-                { label: 'Elevation', icon: 'pi pi-fw pi-external-link', to: '/elevation' },
-                { label: 'Flexbox', icon: 'pi pi-fw pi-directions', to: '/flexbox' },
-                { label: 'Icons', icon: 'pi pi-fw pi-search', to: '/icons' },
-                { label: 'Grid System', icon: 'pi pi-fw pi-th-large', to: '/grid' },
-                { label: 'Spacing', icon: 'pi pi-fw pi-arrow-right', to: '/spacing' },
-                { label: 'Typography', icon: 'pi pi-fw pi-align-center', to: '/typography' },
-                { label: 'Text', icon: 'pi pi-fw pi-pencil', to: '/text' },
-            ]
-        },
-        {
-            label: 'Pages', icon: 'pi pi-fw pi-clone',
-            items: [
-                { label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud' },
-                { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
-                { label: 'Information', icon: 'pi pi-fw pi-id-card', to: '/timeline' },
-                { label: 'Registro', icon: 'pi pi-fw pi-check-square', to: '/empty' },
-                { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
-                
-
             ]
         },
         {

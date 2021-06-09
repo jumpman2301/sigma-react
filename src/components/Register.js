@@ -10,7 +10,7 @@ import { Dropdown } from 'primereact/dropdown';
 import { MultiSelect } from 'primereact/multiselect';
 import { CountryService } from '../service/CountryService';
 
-export const FloatLabelDemo = () => {
+export const Register = () => {
 
     const [countries, setCountries] = useState([]);
     const [filteredCountries, setFilteredCountries] = useState(null);

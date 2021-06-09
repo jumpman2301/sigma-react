@@ -176,9 +176,10 @@ const App = () => {
             items: [
                 { label: 'Crud', icon: 'pi pi-fw pi-user-edit', to: '/crud' },
                 { label: 'Calendar', icon: 'pi pi-fw pi-calendar-plus', to: '/calendar' },
-                { label: 'Timeline', icon: 'pi pi-fw pi-calendar', to: '/timeline' },
-                { label: 'Empty Page', icon: 'pi pi-fw pi-circle-off', to: '/empty' },
-                { label: 'Login', icon: 'pi pi-fw pi-circle-off', to: '/login' }
+                { label: 'Information', icon: 'pi pi-fw pi-id-card', to: '/timeline' },
+                { label: 'Registro', icon: 'pi pi-fw pi-check-square', to: '/empty' },
+                { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+                
 
             ]
         },

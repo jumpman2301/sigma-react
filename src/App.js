@@ -135,7 +135,7 @@ const App = () => {
     }
 
     const menu = [
-        { label: 'Login', icon: 'pi pi-fw pi-sign-in', to: '/login' },
+        { label: 'Fergie', icon: 'pi pi-fw pi-sign-in', to: '/login' },
         { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/list' },
     
         {
